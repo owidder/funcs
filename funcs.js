@@ -38,15 +38,6 @@ com_eosItServices_Dep.funcs = (function() {
         });
     }
 
-    function syncFor(ctr, end, asyncBody) {
-        if(ctr == end) {
-            return;
-        }
-        asyncBody().then(function() {
-            syncFor(ctr+1, end, asyncBody);
-        });
-    }
-
     return {
         if: _if,
         forEachKeyAndVal: forEachKeyAndVal,
